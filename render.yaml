@@ -1,0 +1,17 @@
+services:
+  - type: worker
+    name: sb24-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python -m app.main
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: BOT_NAME
+        value: SB24 Bot
+      - key: BOT_USERNAME
+        value: "@GZCaseFlipBot"
+      - key: BOT_ABOUT
+        value: "Convert text to uppercase, lowercase, or title case."
+      - key: BOT_DESCRIPTION
+        value: "SB24 Bot is a simple text case converter. Choose Uppercase, Lowercase, or Title Case, then send your text."
